@@ -1,4 +1,4 @@
-import './jspsych/dist/jspsych.js'
+var repo_site = "https://dan-subic.github.io/frustration-task/"
 
 export function genTimeline(jsPsych) {
   /* create timeline */
@@ -7,7 +7,7 @@ export function genTimeline(jsPsych) {
   /* preload images */
   var preload = {
       type: jsPsychPreload,
-      images: ['img/blue.png', 'img/red.png']
+      images: [repo_site + 'img/blue.png', repo_site + 'img/red.png']
   };
   timeline.push(preload);
 
@@ -30,9 +30,9 @@ export function genTimeline(jsPsych) {
       <p>If the circle is <strong>red</strong>, press the letter J 
       as fast as you can.</p>
       <div style='width: 700px;'>
-      <div style='float: left;'><img src='img/blue.png'></img>
+      <div style='float: left;'><img src='` + repo_site + `img/blue.png'></img>
       <p class='small'><strong>Press the F key</strong></p></div>
-      <div style='float: right;'><img src='img/red.png'></img>
+      <div style='float: right;'><img src='` + repo_site + `img/red.png'></img>
       <p class='small'><strong>Press the J key</strong></p></div>
       </div>
       <p>Press any key to begin.</p>
@@ -43,8 +43,8 @@ export function genTimeline(jsPsych) {
 
   /* define trial stimuli array for timeline variables */
   var test_stimuli = [
-      { stimulus: "img/blue.png",  correct_response: 'f'},
-      { stimulus: "img/red.png",  correct_response: 'j'}
+      { stimulus: repo_site + "img/blue.png",  correct_response: 'f'},
+      { stimulus: repo_site + "img/red.png",  correct_response: 'j'}
   ];
 
   /* define fixation and test trials */
