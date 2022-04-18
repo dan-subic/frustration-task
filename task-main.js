@@ -1,6 +1,6 @@
 var repo_site = "https://dan-subic.github.io/frustration-task/"
 
-export function genTimeline(jsPsych) {
+var genTimeline = function (jsPsych) {
   /* create timeline */
   var timeline = [];
 
@@ -10,8 +10,6 @@ export function genTimeline(jsPsych) {
       images: [repo_site + 'img/blue.png', repo_site + 'img/red.png']
   };
   timeline.push(preload);
-
-  console.log(jsPsychPreload, jsPsychHtmlKeyboardResponse)
 
   /* define welcome message trial */
   var welcome = {
@@ -60,7 +58,6 @@ export function genTimeline(jsPsych) {
       }
   };
 
-  console.log(jsPsych)
   var test = {
       type: jsPsychImageKeyboardResponse,
       stimulus: jsPsych.timelineVariable('stimulus'),
